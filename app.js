@@ -4,11 +4,15 @@ const bodyParser= require('body-parser');
 const path=require('path');
 const routef= require('./routes/display')
 const app=express();
-mongoose.connect('mongodb+srv://strtiwari28:qwerty1@cluster0-8ac9j.mongodb.net/listitems?retryWrites=true&w=majority', { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
-}
-);
+const dotenv = require("dotenv");
+dotenv.config();
+mongoose.connect(process.env.mongo_url,(err) => {
+    if (err) {
+        console.log(`Error: ${err}`);
+    } else {
+        console.log('Mongo Connection Success');
+    }
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
