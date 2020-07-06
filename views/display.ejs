@@ -1,0 +1,28 @@
+<html>
+<body style="background-color:lightseagreen;">
+<div style="text-align:center">
+<h1>To do List</h1>
+<h3>Add to list</h3>
+<form action="/" method="post">
+    <textarea name="text" placeholder="List data" text-align="left">
+    </textarea>
+    <br>
+    <br>
+    <button type="submit">Submit</button>
+</form >
+
+<h1>The List</h1>
+
+<% items.forEach(function(item){ %>
+    <form method="post" action="/delete">
+    <div>
+    <h2><li> <%=item.text%> </li></h2>
+    <button type="submit" name="itemm" value="<%=item._id%>">Delete</button>
+    <input name= 'newtext'> 
+    <button type="submit" name="itemm1" formaction="/update" value="<%=item._id%>">Update</button>
+    </div>
+    </form>
+<% }); %>
+</div>
+</body>
+</html>
