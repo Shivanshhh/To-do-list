@@ -5,32 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="\css\styles.css">
+    <script src="https://use.fontawesome.com/5b6038424f.js"></script>
 </head>
-<body>
-    <div style="text-align:center">
+<body style="text-align: center;">
         <h1 class="h111"> To do List</h1>
         <h3>Add to list</h3>
         <form action="/" method="post">
-            <textarea class="area" name="text" placeholder="List data" style= "text-align:left">
+            <textarea type="text" class="area" name="text" placeholder="List data" style= "text-align:left">
             </textarea>
             <br>
             <br>
-            <button type="submit">Submit</button>
+            <button type="submit">Add Data</button>
         </form >
-        
-        <h1>The List</h1>
-        
         <% items.forEach(function(item){ %>
-            <form method="post" action="/delete">
-            <div>
-            <h2><li> <%=item.text%> </li></h2>
-            <button type="submit" name="itemm" value="<%=item._id%>">Delete</button>
-            <input name= 'newtext'> 
-            <button type="submit" name="itemm1" formaction="/update" value="<%=item._id%>">Update</button>
+        <form method="post" action="/delete">
+            <div style="display: inline-block;">
+                <table style="margin: auto;" >
+                    <tr> 
+                        <td><h3><li> <%=item.text%> </li></h3></td>
+                        <td class="column"><button type="checkbox" name="itemm"  onclick="this.form.submit();" value="<%=item._id%>"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
+                    </tr>
+                </table>
+                <input name="newtext" type="text">
+                <button type="submit" name="itemm1" formaction="/update" value="<%=item._id%>">Update</button>
             </div>
-            </form>
+        </form>
         <% }); %>
-            </div>
 </body>
 </html>
 

@@ -1,11 +1,25 @@
 body {
-
-    background-image: url("https://github.com/Shivanshhh/To-do-list/blob/master/public/imgs/ramiro-mendes-CjS3QsRuxnE-unsplash.jpg");
-   
-    background-color: #cccccc;
-   
+    font-family: 'helvetica neue';
+    background-image: url("../imgs/17580.jpg");
    } 
 
 .h111{
-    color:red;
+    font-size: 50px;
+    color: goldenrod;
+    font-family: serif;
+    margin-bottom: 20px;
+}
+
+.column
+{
+    padding:0 100px;
+}
+
+textarea[type="text"] {
+    text-align: left;
+    height: 60px;
+    top: 10px;
+    font-size: 20px;
+    font-weight: 200;
+    width: 313px;
 }
