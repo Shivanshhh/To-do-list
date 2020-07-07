@@ -1,12 +1,12 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose')
 
-const listSchema= new mongoose.Schema({
-    text:{
+const listSchema = new mongoose.Schema({
+    text: {
         type: String,
         required: [true],
-        trim: true,
-}
-});
+        trim: true
+    }
+})
 
-const List=mongoose.model('List', listSchema);
-module.exports= List;
+const List = mongoose.model('List', listSchema)
+module.exports = List
